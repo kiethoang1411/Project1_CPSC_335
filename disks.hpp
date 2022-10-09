@@ -221,7 +221,7 @@ sorted_disks sort_lawnmower(const disk_state& before)
             }
             count = currentIndex;
         }
-        while (count > 0)
+        for (;count > 0; count--)
         {
             if (state.get(count - 1) != state.get(count))
             {
@@ -231,7 +231,6 @@ sorted_disks sort_lawnmower(const disk_state& before)
                     numberSwap++;
                 }
             }
-            count--;
         }
     }
   return sorted_disks(disk_state(state), numberSwap);
